@@ -1,21 +1,17 @@
 import React from 'react';
-import styles from './styles.scss';
+import { Link } from 'react-router-dom';
+import './styles.scss';
 
 interface NavBarProps {
 
 }
 
-const options = [
-  {
-    title: 'e'
-  },
-  {
-    title: 'o'
-  }
-]
 
 export const NavBar: React.FC<NavBarProps> = (props) => {
-  return <div className={styles.navBarContainer}>
-    {options.map(option => <h1>{option.title}</h1>)}
-  </div>;
+  return (
+    <div className="nav-bar-container">
+    <Link className="nav-bar-element" to="/">Home</Link>
+      <Link className="nav-bar-element" to="/login">Login</Link>
+    </div>
+  );
 }
